@@ -2,6 +2,13 @@
 
 ```bash
 cargo install pico-uf2
+
+
+pico-uf2 --before reboot --after test  -input ./test.elf -output ./g/test.uf2
+pico-uf2 -b reboot  -a test -i ./test.elf -o ./g/test.uf2
+pico-uf2 -b -a 
+
+
 ```
 
 ## Options

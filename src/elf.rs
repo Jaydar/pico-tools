@@ -1,7 +1,4 @@
-use crate::{
-    address_range::{self, AddressRange, RP2040_ADDRESS_RANGES_FLASH, RP2040_ADDRESS_RANGES_RAM},
-    Opts,
-};
+use crate::address_range::{self, AddressRange, RP2040_ADDRESS_RANGES_FLASH, RP2040_ADDRESS_RANGES_RAM};
 use assert_into::AssertInto;
 use std::{
     cmp::min,
@@ -196,20 +193,6 @@ pub trait AddressRangesExt<'a>: IntoIterator<Item = &'a AddressRange> + Clone {
                     )
                     .into());
                 }
-                if Opts::global().verbose {
-                    println!(
-                        "{} segment {:#08x}->{:#08x} ({:#08x}->{:#08x})",
-                        if uninitialized {
-                            "Uninitialized"
-                        } else {
-                            "Mapped"
-                        },
-                        addr,
-                        addr + size,
-                        vaddr,
-                        vaddr + size
-                    );
-                }
                 return Ok(*range);
             }
         }
@@ -232,14 +215,10 @@ pub trait AddressRangesExt<'a>: IntoIterator<Item = &'a AddressRange> + Clone {
                 let mapped_size = min(entry.filez, entry.memsz);
 
                 if mapped_size > 0 {
-                    let ar =
-                        self.check_address_range(entry.paddr, entry.vaddr, mapped_size, false)?;
+                    let ar = self.check_address_range(entry.paddr, entry.vaddr, mapped_size, false)?;
 
                     // we don't download uninitialized, generally it is BSS and should be zero-ed by crt0.S, or it may be COPY areas which are undefined
                     if ar.typ != address_range::AddressRangeType::Contents {
-                        if Opts::global().verbose {
-                            println!("ignored");
-                        }
                         continue;
                     }
                     let mut addr = entry.paddr;
