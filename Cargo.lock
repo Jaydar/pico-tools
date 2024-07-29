@@ -218,20 +218,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7fcaabb2fef8c910e7f4c7ce9f67a1283a1715879a7c230ca9d6d1ae31f16d91"
 
 [[package]]
-name = "elf2uf2-rs"
-version = "2.0.0"
-dependencies = [
- "assert_into",
- "clap",
- "once_cell",
- "pbr",
- "serialport",
- "static_assertions",
- "sysinfo",
- "zerocopy",
-]
-
-[[package]]
 name = "heck"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -351,6 +337,20 @@ dependencies = [
  "crossbeam-channel",
  "libc",
  "winapi",
+]
+
+[[package]]
+name = "pico-uf2"
+version = "2.0.0"
+dependencies = [
+ "assert_into",
+ "clap",
+ "once_cell",
+ "pbr",
+ "serialport",
+ "static_assertions",
+ "sysinfo",
+ "zerocopy",
 ]
 
 [[package]]

@@ -1,5 +1,5 @@
 [package]
-name = "elf2uf2-rs"
+name = "pico-uf2"
 version = "2.0.0"
 authors = ["Jonathan Nilsson <jonathan@voysys.se>"]
 edition = "2018"
