@@ -1,14 +1,14 @@
-use crate::address_range::{
+use crate::app::address_range::{
     FLASH_SECTOR_ERASE_SIZE, MAIN_RAM_START, RP2040_ADDRESS_RANGES_FLASH, RP2040_ADDRESS_RANGES_RAM,MAIN_RAM_END, XIP_SRAM_END, XIP_SRAM_START
 };
-use crate::elf::{realize_page, AddressRangesExt, Elf32Header, PAGE_SIZE};
+use crate::app::elf::{realize_page, AddressRangesExt, Elf32Header, PAGE_SIZE};
 use assert_into::AssertInto;
 use pbr::{ProgressBar, Units};
 use static_assertions::const_assert;
 use std::{
     collections::HashSet, error::Error, io::{Read, Seek, Write}
 };
-use crate::uf2::{
+use crate::app::uf2::{
     Uf2BlockData, Uf2BlockFooter, Uf2BlockHeader, RP2040_FAMILY_ID, UF2_FLAG_FAMILY_ID_PRESENT,
     UF2_MAGIC_END, UF2_MAGIC_START0, UF2_MAGIC_START1,
 };

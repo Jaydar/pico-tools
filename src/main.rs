@@ -2,19 +2,16 @@ use std::{error::Error, fs::File, io::{BufReader, BufWriter}, thread::sleep, tim
 
 use clap::Parser;
 use sysinfo::{DiskExt, SystemExt};
-mod cli;
-mod cdc;
-mod elf;
-mod uf2;
-mod address_range;
-mod elf_to_uf2;
+mod app;
+
 
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let args = cli::Args::parse();
+    
+    let args = app::cli::Args::parse();
     println!("{:?}", args);
     if let Some(before) = args.before {
-        cdc::send(before)?;
+        app::cdc::send(before)?;
     }
 
     sleep(Duration::from_secs(1));
