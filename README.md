@@ -3,6 +3,7 @@
 Implement log viewing and automatic deployment using a self-built CDC.
 
 ```Rust
+#[embassy_executor::main]
 async fn main(spawner: Spawner) {
     spawner.spawn(usb_cdc::init()).unwrap();
     // ...... 

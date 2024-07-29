@@ -1,0 +1,15 @@
+[package]
+name = "pico-cdc"
+edition = "2021"
+version.workspace = true
+
+[dependencies]
+embassy-rp = { version = "0.1.0", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"] }
+embassy-time = { version = "0.3.1", features = ["defmt", "defmt-timestamp-uptime"] }
+embassy-usb = { version = "0.2.0", features = ["defmt"] }
+embassy-executor = { version = "0.5.0", features = ["arch-cortex-m", "executor-thread", "executor-interrupt", "defmt", "integrated-timers"] }
+embassy-futures = { version = "0.1.0" }
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+# defmt = "0.3"
+defmt-rtt = "0.4"
+rp2040-hal = "0.10.2"

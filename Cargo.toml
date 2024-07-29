@@ -1,25 +1,7 @@
-[package]
-name = "pico-uf2"
-version = "2.0.0"
-authors = ["Jonathan Nilsson <jonathan@voysys.se>"]
-edition = "2018"
+[workspace]
+members = [ "example", "pico-cdc","pico-uf2"]
+resolver = "2"
 
-description = "Port of elf2uf2 to rust"
-documentation = "https://docs.rs/elf2uf2-rs"
-readme = "README.md"
-license = "0BSD"
-repository = "https://github.com/JoNil/elf2uf2-rs"
+[workspace.package]
+version = "0.1.0" 
 
-[dependencies]
-assert_into = "1.1"
-clap = { version = "4", features = ["derive"] }
-once_cell = "1.5"
-pbr = "1"
-serialport = { version = "4", optional = true }
-static_assertions = "1"
-sysinfo = "0.29"
-zerocopy = { version = "0.7", features = ["derive"] }
-
-[features]
-default = ["serial"]
-serial = ["serialport"]

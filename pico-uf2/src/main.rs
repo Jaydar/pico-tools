@@ -1,8 +1,10 @@
+mod app;
+
 use std::{error::Error, fs::File, io::{BufReader, BufWriter}, thread::sleep, time::Duration};
 
+use app::{cdc, elf_to_uf2};
 use clap::Parser;
 use sysinfo::{DiskExt, SystemExt};
-mod app;
 
 
 
@@ -50,14 +52,4 @@ fn main() -> Result<(), Box<dyn Error>> {
     
 
     Ok(())
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    pub fn connect(){
-        cdc::send("reboot".to_string()).unwrap();
-    }
 }
