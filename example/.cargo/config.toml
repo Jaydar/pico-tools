@@ -1,8 +1,5 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-runner = "elf2uf2-rs --deploy"
-# runner = "probe-rs run --chip Debug Probe"
-
-# runner = "pico-uf2 -b reboot -a clear"
+runner = "pico-uf2 -b reboot -a clear"
 
 [build]
 target = "thumbv6m-none-eabi"        # Cortex-M0 and Cortex-M0+

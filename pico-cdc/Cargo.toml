@@ -7,7 +7,7 @@ version = "1.0.1"
 license = "MIT"
 readme = "README.md"
 
-repository = "https://github.com/Jaydar/pico-tools/pico-cdc"
+repository = "https://github.com/Jaydar/pico-tools/tree/master/pico-cdc"
 homepage = "https://github.com/Jaydar/pico-tools"
 documentation = "https://docs.rs/pico-cdc"
 

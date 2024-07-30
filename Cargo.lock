@@ -751,6 +751,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5"
 
 [[package]]
+name = "example"
+version = "0.0.0"
+dependencies = [
+ "cortex-m-rt",
+ "defmt-rtt",
+ "embassy-executor",
+ "embassy-futures",
+ "embassy-rp",
+ "embassy-time",
+ "embassy-usb",
+ "panic-probe",
+ "pico-cdc 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rp2040-hal",
+]
+
+[[package]]
 name = "fixed"
 version = "1.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1294,6 +1310,22 @@ dependencies = [
 [[package]]
 name = "pico-cdc"
 version = "1.0.1"
+dependencies = [
+ "defmt-rtt",
+ "embassy-executor",
+ "embassy-futures",
+ "embassy-rp",
+ "embassy-time",
+ "embassy-usb",
+ "panic-probe",
+ "rp2040-hal",
+]
+
+[[package]]
+name = "pico-cdc"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fcc5e7bb1bc617440d2133099fab572924f57092e569d5d45153179429f17ba2"
 dependencies = [
  "defmt-rtt",
  "embassy-executor",

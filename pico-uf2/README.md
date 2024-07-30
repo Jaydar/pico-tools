@@ -1,7 +1,13 @@
 # Automatic deployment
 
-Implement log viewing and automatic deployment using a self-built CDC.
+Implement log viewing and automatic deployment using a self-built **[CDC](https://crates.io/crates/pico-cdc)**.
 
+1.install
+
+```bash
+cargo install pico-uf2
+```
+2.modify code
 ```Rust
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
@@ -10,11 +16,8 @@ async fn main(spawner: Spawner) {
 }
 ```
 
+**[Complete the example](https://github.com/Jaydar/pico-tools/tree/master/example)** 
 
-```bash
-cargo install pico-uf2
-pico-uf2 --before reboot --after clear  -input ./test.elf -output ./g/test.uf2
-```
 ## Option
 ```
 Arguments:
