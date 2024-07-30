@@ -1,4 +1,4 @@
-# Port of elf2uf2 to rust
+# Automatic deployment
 
 Implement log viewing and automatic deployment using a self-built CDC.
 

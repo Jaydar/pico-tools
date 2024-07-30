@@ -1307,7 +1307,7 @@ dependencies = [
 
 [[package]]
 name = "pico-uf2"
-version = "0.1.0"
+version = "1.0.1"
 dependencies = [
  "assert_into",
  "clap",
