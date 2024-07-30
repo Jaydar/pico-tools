@@ -1293,7 +1293,7 @@ dependencies = [
 
 [[package]]
 name = "pico-cdc"
-version = "0.1.0"
+version = "0.0.0"
 dependencies = [
  "defmt-rtt",
  "embassy-executor",
@@ -1307,7 +1307,7 @@ dependencies = [
 
 [[package]]
 name = "pico-uf2"
-version = "1.0.0"
+version = "0.0.0"
 dependencies = [
  "assert_into",
  "clap",

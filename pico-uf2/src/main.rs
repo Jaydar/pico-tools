@@ -15,7 +15,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     if let Some(before) = args.before {
         app::cdc::send(before)?;
     }
-
+    
     sleep(Duration::from_secs(1));
 
     let input = BufReader::new(File::open(args.input)?);
