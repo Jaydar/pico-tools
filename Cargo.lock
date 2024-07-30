@@ -751,22 +751,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5"
 
 [[package]]
-name = "example"
-version = "0.1.0"
-dependencies = [
- "cortex-m-rt",
- "defmt-rtt",
- "embassy-executor",
- "embassy-futures",
- "embassy-rp",
- "embassy-time",
- "embassy-usb",
- "panic-probe",
- "pico-cdc",
- "rp2040-hal",
-]
-
-[[package]]
 name = "fixed"
 version = "1.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
