@@ -10,6 +10,7 @@ repository = "https://github.com/Jaydar/pico-tools/pico-cdc"
 homepage = "https://github.com/Jaydar/pico-tools"
 documentation = "https://docs.rs/pico-cdc"
 
+publish = ["https://crates.io"]
 
 [dependencies]
 embassy-rp = { version = "0.1.0", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"] }
