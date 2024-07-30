@@ -13,7 +13,7 @@ async fn main(spawner: Spawner) {
 
 ```bash
 cargo install pico-uf2
-pico-uf2 --before reboot --after test  -input ./test.elf -output ./g/test.uf2
+pico-uf2 --before reboot --after clear  -input ./test.elf -output ./g/test.uf2
 ```
 ## Option
 ```
@@ -32,6 +32,10 @@ Options:
 ## Acknowledgements and Copyright
 
 This project includes code borrowed or directly used from the following open-source projects:
+
+*  **[embassy](https://github.com/embassy-rs/embassy)** 
+
+*  **[rp2040-hal](https://github.com/rp-rs/rp-hal)** 
 
 *  **[elf2uf2-rs](https://github.com/JoNil/elf2uf2-rs)** 
 
