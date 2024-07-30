@@ -2,7 +2,7 @@
 name = "pico-uf2"
 description = "elf to uf2, Automatically restart to enter BootSLE"
 authors = ["Jaydar J<Jaydar@Outlook.com>"]
-version = "1.0.1"
+version = "1.0.2"
 
 edition = "2021"
 license = "MIT"
