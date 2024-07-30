@@ -16,7 +16,7 @@ bind_interrupts!(struct Irqs {
     USBCTRL_IRQ => InterruptHandler<USB>;
 });
 
-#[embassy_executor::task]
+
 pub async fn init() {
     // 初始化RP2040外围设备
     let p = embassy_rp::init(Default::default());
