@@ -1,8 +1,9 @@
 [package]
 name = "pico-cdc"
 description = "elf to uf2, Automatically restart to enter BootSLE"
+authors = ["Jaydar <Jaydar@Outlook.com>"]
 edition = "2021"
-authors = ["Jaydar Jaydar@Outlook.com"]
+version = "0.1.0"
 license = "MIT"
 readme = "README.md"
 
