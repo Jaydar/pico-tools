@@ -12,7 +12,7 @@ repository = "https://github.com/Jaydar/pico-tools/pico-uf2"
 homepage = "https://github.com/Jaydar/pico-tools"
 documentation = "https://docs.rs/pico-uf2"
 
-publish = ["https://crates.io"]
+publish = true
 
 [dependencies]
 assert_into = "1.1"
