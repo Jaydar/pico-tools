@@ -1,7 +1,17 @@
 [package]
 name = "pico-cdc"
+description = "elf to uf2, Automatically restart to enter BootSLE"
+authors = ["Jaydar <Jaydar@Outlook.com>"]
 edition = "2021"
-version.workspace = true
+version = "1.0.2"
+license = "MIT"
+readme = "README.md"
+
+repository = "https://github.com/Jaydar/pico-tools/tree/master/pico-cdc"
+homepage = "https://github.com/Jaydar/pico-tools"
+documentation = "https://docs.rs/pico-cdc"
+
+publish = true
 
 [dependencies]
 embassy-rp = { version = "0.2.0", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"] }

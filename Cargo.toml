@@ -1,5 +1,5 @@
 [workspace]
-members = [ "example", "pico-cdc","pico-uf2"]
+members = ["pico-cdc","pico-uf2","example"]
 resolver = "2"
 
 [workspace.package]

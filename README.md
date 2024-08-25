@@ -1,8 +1,16 @@
-# Port of elf2uf2 to rust
+# Automatic deployment
 
-Implement log viewing and automatic deployment using a self-built CDC.
+PR2040 Rust automatic deployment tool. Using **[pico-uf2](https://crates.io/crates/pico-uf2)** and **[pico-cdc](https://crates.io/crates/pico-cdc)** together enables automatic deployment.
 
+1.install
+
+```bash
+cargo install pico-uf2
+cargo add pico-cdc
+```
+2.modify code
 ```Rust
+
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
     spawner.spawn(usb_cdc::init()).unwrap();
@@ -10,11 +18,8 @@ async fn main(spawner: Spawner) {
 }
 ```
 
+**[Complete the example](https://github.com/Jaydar/pico-tools/tree/master/example)** 
 
-```bash
-cargo install pico-uf2
-pico-uf2 --before reboot --after test  -input ./test.elf -output ./g/test.uf2
-```
 ## Option
 ```
 Arguments:
@@ -32,6 +37,10 @@ Options:
 ## Acknowledgements and Copyright
 
 This project includes code borrowed or directly used from the following open-source projects:
+
+*  **[embassy](https://github.com/embassy-rs/embassy)** 
+
+*  **[rp2040-hal](https://github.com/rp-rs/rp-hal)** 
 
 *  **[elf2uf2-rs](https://github.com/JoNil/elf2uf2-rs)** 
 
