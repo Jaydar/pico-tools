@@ -1,10 +1,8 @@
 mod app;
-
 use std::{error::Error, fs::File, io::{BufReader, BufWriter}, thread::sleep, time::Duration};
-
 use app::{cdc, elf_to_uf2};
 use clap::Parser;
-use sysinfo::{DiskExt, SystemExt};
+use sysinfo::Disks;
 
 
 
@@ -20,10 +18,11 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let input = BufReader::new(File::open(args.input)?);
     let output = {
-        let sys = sysinfo::System::new_all();
-
+        
+        
         let mut pico_drive = None;
-        for disk in sys.disks() {
+        let disks =  Disks::new_with_refreshed_list();
+        for disk in disks.iter() {
             let mount = disk.mount_point();
 
             if mount.join("INFO_UF2.TXT").is_file() {
