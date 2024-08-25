@@ -14,4 +14,4 @@ embassy-futures = { version = "0.1.0" }
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 defmt-rtt = "0.4"
 rp2040-hal = "0.10.2"
-pico-cdc = "1.0.1"
+pico-cdc = {path = "../pico-cdc"}
