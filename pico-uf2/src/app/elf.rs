@@ -7,7 +7,7 @@ use std::{
     io::{Read, Seek, SeekFrom},
     mem,
 };
-use zerocopy::{AsBytes, FromBytes, FromZeroes};
+use zerocopy::{IntoBytes, FromBytes};
 
 const ELF_MAGIC: u32 = 0x464c457f;
 const EM_ARM: u16 = 0x28;
@@ -18,7 +18,7 @@ pub const LOG2_PAGE_SIZE: u32 = 8;
 pub const PAGE_SIZE: u32 = 1 << LOG2_PAGE_SIZE;
 
 #[repr(packed)]
-#[derive(AsBytes, Copy, Clone, Default, Debug, FromBytes, FromZeroes)]
+#[derive(IntoBytes, Copy, Clone, Default, Debug, FromBytes)]
 pub struct ElfHeader {
     pub magic: u32,
     pub arch_class: u8,
@@ -33,7 +33,7 @@ pub struct ElfHeader {
 }
 
 #[repr(packed)]
-#[derive(AsBytes, Copy, Clone, Default, Debug, FromBytes, FromZeroes)]
+#[derive(IntoBytes, Copy, Clone, Default, Debug, FromBytes)]
 pub struct Elf32Header {
     pub common: ElfHeader,
     pub entry: u32,
@@ -121,7 +121,7 @@ impl Elf32Header {
 }
 
 #[repr(packed)]
-#[derive(AsBytes, Copy, Clone, Default, Debug, FromBytes, FromZeroes)]
+#[derive(IntoBytes, Copy, Clone, Default, Debug, FromBytes)]
 pub struct Elf32PhEntry {
     pub typ: u32,
     pub offset: u32,

@@ -1,10 +1,10 @@
 [package]
 name = "pico-uf2"
 description = "elf to uf2, Automatically restart to enter BootSLE"
-authors = ["Jaydar J<Jaydar@Outlook.com>"]
-version = "1.0.2"
+authors = ["Jaydar <Jaydar@Outlook.com>"]
+version = "1.0.3"
 
-edition = "2021"
+edition = "2024"
 license = "MIT"
 readme = "README.md"
 
@@ -20,8 +20,8 @@ clap = { version = "4.5.16", features = ["derive"] }
 pbr = "1"
 serialport = {version = "4.5.0", optional = true}
 static_assertions = "1"
-sysinfo = "0.31.3"
-zerocopy = { version = "0.7.35", features = ["derive"] }
+sysinfo = "0.33.1"
+zerocopy = { version = "0.8.21", features = ["derive"] }
 
 [features]
 default = ["serial"]

@@ -12,7 +12,7 @@ use crate::app::uf2::{
     Uf2BlockData, Uf2BlockFooter, Uf2BlockHeader, RP2040_FAMILY_ID, UF2_FLAG_FAMILY_ID_PRESENT,
     UF2_MAGIC_END, UF2_MAGIC_START0, UF2_MAGIC_START1,
 };
-use zerocopy::AsBytes;
+use zerocopy::IntoBytes;
 
 
 
@@ -132,7 +132,8 @@ pub fn elf_to_uf2(mut input: impl Read + Seek, mut output: impl Write) -> Result
         block_data.iter_mut().for_each(|v| *v = 0);
 
         realize_page(&mut input, &fragments, &mut block_data)?;
-
+        
+        
         output.write_all(block_header.as_bytes())?;
         output.write_all(block_data.as_bytes())?;
         output.write_all(block_footer.as_bytes())?;
